@@ -33,6 +33,8 @@ jobs:
           mkdir -p logs
           echo "Last run: $(date)" > logs/last_run.txt
           echo "Status: ${{ job.status }}" >> logs/last_run.txt
+          echo "Wallet: 9cV3D54tgGDxwXZeKUPt634diseVQETo56HoHejy6tAA" >> logs/last_run.txt
+          echo "Current Balance: $(solana balance 9cV3D54tgGDxwXZeKUPt634diseVQETo56HoHejy6tAA --url https://api.devnet.solana.com)" >> logs/last_run.txt
 
       - name: Commit and push status log
         if: always()
