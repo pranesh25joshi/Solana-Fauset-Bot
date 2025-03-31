@@ -2,8 +2,11 @@ name: Daily Solana Airdrop
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs daily at midnight UTC
-  workflow_dispatch: # Allows manual triggering
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   request-sol:
@@ -15,23 +18,22 @@ jobs:
 
       - name: Install Solana CLI
         run: |
-          sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+          sh -c "$(curl -sSfL https://release.anza.xyz/v1.18.25/install)"
           echo "$HOME/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
-          export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
       - name: Verify Solana installation
         run: solana --version
-        
+
       - name: Request SOL via airdrop
         run: bash solana_airdrop.sh
-      
+
       - name: Create status log
         if: always()
         run: |
           mkdir -p logs
           echo "Last run: $(date)" > logs/last_run.txt
           echo "Status: ${{ job.status }}" >> logs/last_run.txt
-          
+
       - name: Commit and push status log
         if: always()
         uses: stefanzweifel/git-auto-commit-action@v5
