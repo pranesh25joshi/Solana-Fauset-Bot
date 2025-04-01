@@ -45,9 +45,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 If you have any questions or need further assistance, feel free to open an issue or contact the repository owner.
 
-**pranesh Joshi**
+- **pranesh Joshi**
 
-GitHub: [pranesh25joshi](https://github.com/pranesh25joshi 
-Twitter/X: [@praneshz_](https://x.com/pranehz_
+- GitHub:[pranesh25joshi](https://github.com/pranesh25joshi)
 
-Location: Bhopal, India
+- Twitter/X: [@praneshz_](https://x.com/praneshz_)
+
+- Location: Bhopal, India
