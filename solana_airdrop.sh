@@ -13,9 +13,9 @@ export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 INITIAL_BALANCE=$(solana balance $WALLET_ADDRESS --url https://api.devnet.solana.com | awk '{print $1}')
 echo "Initial balance: $INITIAL_BALANCE SOL"
 
-# Request 5 SOL from devnet
+# Request 10 SOL from devnet
 echo "Requesting airdrop..."
-solana airdrop 5 $WALLET_ADDRESS --url https://api.devnet.solana.com
+solana airdrop 10 $WALLET_ADDRESS --url https://api.devnet.solana.com
 
 # Wait for transaction to confirm
 sleep 5
